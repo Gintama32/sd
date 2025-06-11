@@ -173,3 +173,9 @@ address {
   font-family: cursive;
   font-size: 1.3em;
 }
+
+.logo {
+  max-width: 250px;
+  display: block;
+  margin: 0 auto;
+}

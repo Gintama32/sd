@@ -57,6 +57,9 @@ if (services.length > 0) {
 document.getElementById('printButton').onclick = function() {
   window.print();
 };
-document.getElementById('downloadButton').onclick = function() {
-  html2pdf().from(document.body).save('proposal.pdf');
-};
+const downloadBtn = document.getElementById('downloadButton');
+if (downloadBtn) {
+  downloadBtn.onclick = function() {
+    html2pdf().from(document.body).save('proposal.pdf');
+  };
+}
