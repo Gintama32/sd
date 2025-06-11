@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Proposal Generator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 600px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    input, button {
+      display: block;
+      margin: 10px 0;
+      padding: 0.5rem;
+      width: 100%;
+    }
+    .service-row {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 5px;
+    }
+    .service-row input {
+      width: 50%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Proposal Generator</h1>
+  <form id="proposalForm">
+    <select name="clientSalutation" required>
+      <option value="Mr.">Mr.</option>
+      <option value="Mrs.">Mrs.</option>
+    </select>
+    <input name="clientName" placeholder="Client Name" required />
+    <input name="position" placeholder="title/position" required />
+    <input name="clientFirmName" placeholder="Client Firm Name" required />
+    <input name="projectName" placeholder="Project Name" required />
+    <input name="address1" placeholder="Address Line 1" required />
+    <input name="address2" placeholder="City, State, Zip" required />
+    <select name="feeType" required>
+      <option value="lump sum fee">lump sum fee</option>
+      <option value="time and material">time and material</option>
+    </select>
+    <div id="services-container">
+      <div class="service-row">
+        <input name="service[]" placeholder="Service" required />
+        <input name="serviceFee[]" placeholder="Service Fee" required />
+      </div>
+    </div>
+    <button type="button" id="addServiceBtn">Add Service</button>
+    <input name="date" type="date" placeholder="Date" required />
+    <button type="submit">Generate Proposal</button>
+  </form>
+
+  <!-- Required Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/pizzip@3.1.1/dist/pizzip.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.29.0/docxtemplater.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <!-- Your Script -->
+  <script src="script.js"></script>
+</body>
+</html>

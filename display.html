@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Proposal Summary</title>
+    <link rel="stylesheet" href="display.css">
+</head>
+
+<body>
+    <div class="proposal-container">
+
+        <!-- Header Section -->
+        <header>
+            <img src="logo.png" alt="logo" class="logo">
+            <h2>Fee Proposal</h2>
+            <div class="letter-header">
+                <div class="left-side">
+                    <div id="clientName"></div>
+                    <div id="position"></div>
+                    <div id="clientFirmName"></div>
+                    <div id="address1"></div>
+                    <div id="address2"></div>
+                </div>
+                <div class="right-side">
+                    <p id="date"></p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <p id="projectName2"></p>
+            <p id="client3"></p>
+            <p>Sherpa Construction Consulting (Sherpa) is pleased to submit its lump sum fee proposal to provide cost estimating services for the subject project. Our proposed services and associated fees are below:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project/Phase Description</th>
+                        <th>Total Fee</th>
+                    </tr>
+                </thead>
+                <!-- Table body will be populated by your display.js -->
+                <tbody>
+                    <!-- Example Row:
+                    <tr>
+                        <td>Schematic Design Estimate</td>
+                        <td>$5,000.00</td>
+                    </tr>
+                    -->
+                </tbody>
+            </table>
+            <div class="notes-section">
+                <p>Notes:</p>
+                <ul>
+                    <li>Value Engineering Services are not included.</li>
+                    <li>Site Visits will be billed $250/ HR, if required.</li>
+                    <li>Reconciliation with an added third party or GMP negotiation will be an additional service.</li>
+                    <li>Any scope changes that entitle <span id="clientFirm2"></span> to additional fees (for which Sherpa is required to provide services) will also entitle Sherpa to additional fees.</li>
+                    <li>This fee is effective for 6 months.</li>
+                    <li>Payments shall be made within thirty (30) days from Client's receipt of payment from Owner Consultant's services.</li>
+                    <li>Any changes in the number of submissions will change the fee on other submissions.</li>
+                </ul>
+            </div>
+            <address>
+                Please contact me if you have any questions regarding this proposal. You can reach me by cell phone: (646) 339-5785 or email at: chongba@sherpagcm.com
+            </address>
+        </main>
+
+        <!-- Footer and Signature Section -->
+        <footer>
+            <div class="last">
+                <div class="last-left">
+                    <div>Thank you,</div>
+                </div>
+                <div class="last-right">
+                    <div id="client3"></div>
+                </div>
+            </div>
+            <div class="last">
+                <div class="left-side">
+                    <div><b>Chongba L. Sherpa</b></div>
+                    <div>President</div>
+                </div>
+                <div class="right-side signature-area">
+                    <div class="form-row">
+                        <label for="client4">Name:</label>
+                        <input id="client4" type="text">
+                    </div>
+                    <div class="form-row">
+                        <label for="typed-signature">Signature:</label>
+                        <input type="text" id="typed-signature">
+                    </div>
+                    <div class="form-row title-date-row">
+                        <label for="title">Title:</label>
+                        <input id="title" type="text">
+                        <label for="date2" class="date-label">Date:</label>
+                        <input id="date2" type="date">
+                    </div>
+                    <div class="form-row">
+                        <label for="projectName2">Project Name:</label>
+                        <input id="projectName2" type="text">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="display.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+
+</html>

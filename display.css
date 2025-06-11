@@ -1,0 +1,175 @@
+/* Styles for the overall page layout */
+body {
+  background-color: #f0f0f0;
+  font-family: sans-serif;
+}
+
+.proposal-container {
+  max-width: 850px;
+  margin: 2em auto;
+  padding: 3em 4em;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header and Main Content Styles */
+img {
+  margin: 0 auto;
+  display: block;
+  max-width: 150px;
+}
+
+h2 {
+  margin: 0 0 0.5em 0;
+  text-align: right;
+}
+
+.letter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  line-height: 1.2;
+  padding: 0;
+  margin: 0;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+}
+
+/* Table styling */
+table {
+  width: 100%;
+  margin: 1.5em auto;
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border: none;
+}
+
+table thead th {
+  background-color: #f2f2f2;
+  border-bottom: 2px solid black;
+}
+
+table th:first-child,
+table td:first-child {
+  border-right: 2px solid black;
+}
+
+/* Adds a border above the total row */
+.total-row td {
+  border-top: 3px solid #000;
+}
+
+
+/* Notes Section Styling */
+.notes-section p {
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.notes-section ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 0;
+  line-height: 1.6;
+}
+
+address {
+  font-style: normal;
+  margin-top: 2em;
+}
+
+
+/* Footer and Signature Section Styling */
+.last {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 2em;
+  width: 100%;
+}
+
+.last-left,
+.last-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.last-left { align-items: flex-start; }
+.last-right { align-items: flex-end; }
+
+.signature-area {
+  align-items: flex-start;
+  gap: 1.5em;
+  flex-basis: 60%;
+}
+
+.form-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  width: 100%;
+}
+
+.form-row label {
+  flex-shrink: 0;
+  text-align: left;
+  width: 110px; 
+}
+
+/* Set specific width for inputs to align them */
+#client4, #typed-signature, #projectName2 {
+  width: 270px; 
+}
+
+/* Special handling for the more complex Title/Date row */
+.title-date-row {
+  gap: 10px;
+}
+
+.title-date-row .date-label {
+  width: auto;
+}
+
+.title-date-row #title {
+  width: 80px;
+}
+
+/* General Input Styling */
+.proposal-container input[type="text"],
+.proposal-container input[type="date"] {
+  border: none;
+  border-bottom: 1px solid #333;
+  background-color: transparent;
+  outline: none;
+  padding: 3px;
+  font-size: 1em;
+  font-family: inherit;
+}
+
+.proposal-container input[type="date"] {
+  min-width: 130px;
+}
+
+#typed-signature {
+  font-family: cursive;
+  font-size: 1.3em;
+}
