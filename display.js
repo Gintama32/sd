@@ -52,14 +52,9 @@ if (services.length > 0) {
   table.appendChild(totalRow);
 }
 
-
-
-document.getElementById('printButton').onclick = function() {
-  window.print();
-};
 const downloadBtn = document.getElementById('downloadButton');
 if (downloadBtn) {
   downloadBtn.onclick = function() {
-    html2pdf().from(document.body).save('proposal.pdf');
+    window.print();
   };
 }

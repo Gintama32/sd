@@ -179,3 +179,9 @@ address {
   display: block;
   margin: 0 auto;
 }
+
+@media print {
+  #downloadButton {
+    display: none !important;
+  }
+}
