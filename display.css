@@ -98,8 +98,19 @@ table td {
   border: none;
 }
 
+/* Make only the first two th elements (Project/Phase Description and Total Fee) normal weight and left-aligned */
 table thead th {
-  background-color: #f2f2f2;
+  font-weight: normal;
+  text-align: left;
+}
+
+/* Center the text in all table header cells */
+table thead th {
+  text-align: center;
+}
+
+/* Restore a visible bottom border for all table header cells */
+table thead th {
   border-bottom: 2px solid black;
 }
 
@@ -117,6 +128,18 @@ table td:last-child {
 /* Adds a border above the total row */
 .total-row td {
   border-top: 3px solid #000;
+}
+
+/* Center all table data cells except the total row */
+table tbody td {
+  text-align: center;
+}
+/* Right-align the last cell in the total row */
+
+
+/* Center the data in all cells of repair section rows */
+tr.repair-row td {
+  text-align: center;
 }
 
 

@@ -41,6 +41,10 @@ if (services.length > 0) {
     // Format fee with dollar sign
     let feeNum = parseFloat((item.fee || "0").replace(/[^\d.\-]/g, ""));
     let feeDisplay = isNaN(feeNum) ? item.fee : `$${feeNum.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    // Add a class if the service is a repair section
+    if (item.service && item.service.toLowerCase().includes('repair')) {
+      row.classList.add('repair-row');
+    }
     row.innerHTML = `<td>${item.service}</td><td>${feeDisplay}</td>`;
     table.appendChild(row);
     if (!isNaN(feeNum)) totalFee += feeNum;
@@ -48,7 +52,7 @@ if (services.length > 0) {
   // Add total row
   const totalRow = document.createElement("tr");
   totalRow.className = "total-row";
-  totalRow.innerHTML = `<td style='font-weight:bold;'>Total Fee</td><td style='font-weight:bold;'>$${totalFee.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>`;
+  totalRow.innerHTML = `<td style="text-align: right;">Total</td><td style="text-align: center;">$${totalFee.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>`;
   table.appendChild(totalRow);
 }
 
