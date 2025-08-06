@@ -2,25 +2,54 @@
 body {
   background-color: #f0f0f0;
   font-family: sans-serif;
+  font-size: 16px;
 }
 
 .proposal-container {
-  max-width: 850px;
+  max-width: 8.5in;
+  width: 8.5in;
   margin: 2em auto;
-  padding: 3em 4em;
+  padding: 0.75in 0.75in;
   background-color: white;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  min-height: 11in;
+}
+
+.proposal-container p {
+  font-size: 1em;
 }
 
 /* Header and Main Content Styles */
+main {
+  flex: 1;
+}
+
 img {
   margin: 0 auto;
   display: block;
   max-width: 150px;
 }
 
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 0.5em;
+}
+
 h2 {
-  margin: 0 0 0.5em 0;
+  margin: 0;
+  
+  text-align: right;
+  font-size: 1.5em;
+}
+
+.header-date {
+  margin: 0.2em 0 0 0;
+  font-size: 1em;
   text-align: right;
 }
 
@@ -28,7 +57,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 2em;
+  margin-bottom: 0.5em;
 }
 
 .left-side {
@@ -48,11 +77,18 @@ h2 {
 }
 
 /* Table styling */
-table {
+.table-container {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  margin: 1.5em auto;
+  margin: 1.5em 0;
+}
+
+table {
+  width: 75%;
   border: 2px solid black;
   border-collapse: collapse;
+  font-size: 1em;
 }
 
 table th,
@@ -70,6 +106,12 @@ table thead th {
 table th:first-child,
 table td:first-child {
   border-right: 2px solid black;
+  width: 65%;
+}
+
+table th:last-child,
+table td:last-child {
+  width: 35%;
 }
 
 /* Adds a border above the total row */
@@ -80,77 +122,178 @@ table td:first-child {
 
 /* Notes Section Styling */
 .notes-section p {
-  margin-bottom: 0.5em;
+  margin-bottom: 0.1em;
   font-weight: bold;
+  font-size: 1.05em;
 }
 
 .notes-section ul {
   list-style-position: inside;
   padding-left: 0;
   margin-left: 0;
-  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 0.4em;
+  line-height: 1.1;
+  font-size: 1em;
 }
 
 address {
   font-style: normal;
-  margin-top: 2em;
+  margin-top: 0.2em;
+  margin-bottom: 0.1em;
+  padding-bottom: 0;
+  font-size: 1em;
 }
 
 
 /* Footer and Signature Section Styling */
-.last {
+/* New signature container layout */
+.signature-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-top: 2em;
   width: 100%;
+  margin-top: 0.1em;
 }
 
-.last-left,
-.last-right {
+.signature-left {
   display: flex;
   flex-direction: column;
-  gap: 0.2em;
+  align-items: flex-start;
+  gap: 0.3em;
 }
 
-.last-left { align-items: flex-start; }
-.last-right { align-items: flex-end; }
+.thank-you {
+  margin-bottom: 0.2em;
+}
+
+.signer-name {
+  margin-bottom: 0;
+}
+
+.signer-title {
+  margin-top: 0;
+}
+
+.signature-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 400px;
+}
+
+.signature-header {
+  font-weight: normal;
+  margin-bottom: 1.5em;
+  align-self: flex-start;
+  margin-left: 20px;
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.inline-input {
+  width: 150px;
+  margin-left: 5px;
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  background-color: transparent;
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.signature-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+}
+
+.borderless-input {
+  border: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  background-color: transparent;
+  outline: none;
+  padding: 0 2px;
+  font-size: 0.95em;
+  font-family: inherit;
+  width: 100px;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
 
 .signature-area {
-  align-items: flex-start;
-  gap: 1.5em;
+  align-items: flex-end;
+  gap: 0.4em;
   flex-basis: 60%;
+  margin-left: auto;
 }
 
 .form-row {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 150px 200px;
+  gap: 5px;
   width: 100%;
+  max-width: 400px;
+  margin-bottom: 0;
+  align-items: center;
 }
+
+/* No special margin for first form row */
 
 .form-row label {
-  flex-shrink: 0;
   text-align: left;
-  width: 110px; 
+  font-size: 0.95em;
+  white-space: nowrap;
 }
 
+/* Removed special styling for the approved label as it's now in the thank-you-row */
+
 /* Set specific width for inputs to align them */
-#client4, #typed-signature, #projectName2 {
-  width: 270px; 
+#client4, #typed-signature {
+  width: 200px; 
+}
+
+#projectName2 {
+  width: 150px;
+}
+
+/* Special styling for the project row */
+.project-row {
+  display: grid;
+  grid-template-columns: 150px 200px;
+}
+
+.project-row input {
+  width: 150px;
 }
 
 /* Special handling for the more complex Title/Date row */
 .title-date-row {
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 150px 60px 40px 100px;
+  gap: 5px;
+  align-items: center;
 }
 
 .title-date-row .date-label {
-  width: auto;
+  margin-left: 5px;
+}
+
+.title-date-row #date2 {
+  width: 100px;
+  max-width: 100px;
 }
 
 .title-date-row #title {
-  width: 80px;
+  width: 60px;
 }
 
 /* General Input Styling */
@@ -160,28 +303,173 @@ address {
   border-bottom: 1px solid #333;
   background-color: transparent;
   outline: none;
-  padding: 3px;
-  font-size: 1em;
+  padding: 1px;
+  font-size: 0.95em;
   font-family: inherit;
 }
 
 .proposal-container input[type="date"] {
-  min-width: 130px;
+  width: 100px;
+  max-width: 100px;
 }
 
 #typed-signature {
   font-family: cursive;
-  font-size: 1.3em;
+  font-size: 1em;
 }
 
 .logo {
-  max-width: 250px;
+  max-width: 180px;
   display: block;
   margin: 0 auto;
 }
 
+/* Universal Footer Styles */
+.universal-footer {
+  margin-top: 1.5em;
+  padding-top: 0.3em;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  position: static;
+}
+
+
+
+.footer-content {
+  position: relative;
+  font-size: 0.8em;
+  color: #666;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.page-number {
+  position: absolute;
+  left: 0;
+  text-align: left;
+}
+
+.address-footer {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.signature-header-row {
+  margin-bottom: 0.2em;
+}
+
 @media print {
+  @page {
+    size: letter portrait;
+    margin: 0.5in 0.5in 0.8in 0.5in; /* Increased bottom margin for footer */
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    width: 8.5in;
+    height: 11in;
+    background-color: white;
+    position: relative;
+  }
+  
+  .proposal-container {
+    width: 7.5in;
+    max-width: 7.5in;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    page-break-after: always;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  main {
+    flex: 1;
+    margin-bottom: 0;
+  }
+  
+  address {
+    margin-top: 0.05in;
+    margin-bottom: 0.05in;
+    padding-bottom: 0;
+  }
+  
+  main div:last-child {
+    margin-top: 0.05in !important;
+  }
+  
+  .signature-container {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  
+  .form-row {
+    margin-bottom: 0;
+    gap: 2px;
+  }
+  
+  .signature-form {
+    gap: 0.02in;
+  }
+  
+  .signature-header {
+    margin-bottom: 0.05in;
+  }
+  
+  .signature-right {
+    gap: 0;
+  }
+  
+  .signature-left {
+    gap: 0.05in;
+  }
+  
+  .thank-you {
+    margin-bottom: 0;
+  }
+  
+  .signer-name {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-top: 0.05in;
+  }
+  
+  .signer-title {
+    margin-top: 0;
+  }
+  
+  .universal-footer {
+    position: fixed;
+    bottom: 0.05in;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding-top: 0.05in;
+    padding-bottom: 0.05in;
+    border-top: 1px solid #ccc;
+    background-color: white;
+    z-index: 9999;
+  }
+  
+  footer {
+    margin-bottom: 0.15in;
+    margin-top: -0.3in;
+  }
+  
+  .footer-content {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
   #downloadButton {
     display: none !important;
+  }
+
+  .signature-header-row {
+    margin-bottom: 0.1in;
   }
 }

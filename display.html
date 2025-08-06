@@ -13,7 +13,11 @@
         <!-- Header Section -->
         <header>
             <img src="logo.jpg" alt="logo" class="logo">
-            <h2>Fee Proposal</h2>
+            <div class="header-right">
+                
+                <h2>Fee Proposal</h2>
+                <p id="date" class="header-date"></p>
+            </div>
             <div class="letter-header">
                 <div class="left-side">
                     <div id="clientName"></div>
@@ -21,9 +25,6 @@
                     <div id="clientFirmName"></div>
                     <div id="address1"></div>
                     <div id="address2"></div>
-                </div>
-                <div class="right-side">
-                    <p id="date"></p>
                 </div>
             </div>
         </header>
@@ -33,25 +34,27 @@
             <p id="projectName2"></p>
             <p id="client3"></p>
             <p>Sherpa Construction Consulting (Sherpa) is pleased to submit its lump sum fee proposal to provide cost estimating services for the subject project. Our proposed services and associated fees are below:</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Project/Phase Description</th>
-                        <th>Total Fee</th>
-                    </tr>
-                </thead>
-                <!-- Table body will be populated by your display.js -->
-                <tbody>
-                    <!-- Example Row:
-                    <tr>
-                        <td>Schematic Design Estimate</td>
-                        <td>$5,000.00</td>
-                    </tr>
-                    -->
-                </tbody>
-            </table>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Project/Phase Description</th>
+                            <th>Total Fee</th>
+                        </tr>
+                    </thead>
+                    <!-- Table body will be populated by your display.js -->
+                    <tbody>
+                        <!-- Example Row:
+                        <tr>
+                            <td>Schematic Design Estimate</td>
+                            <td>$5,000.00</td>
+                        </tr>
+                        -->
+                    </tbody>
+                </table>
+            </div>
             <div class="notes-section">
-                <p>Notes:</p>
+                <p><u>Notes:</u></p>
                 <ul>
                     <li>Value Engineering Services are not included.</li>
                     <li>Site Visits will be billed $250/ HR, if required.</li>
@@ -62,50 +65,65 @@
                     <li>Any changes in the number of submissions will change the fee on other submissions.</li>
                 </ul>
             </div>
-            <address>
+            <address style="margin-top: 0.2em;">
                 Please contact me if you have any questions regarding this proposal. You can reach me by cell phone: (646) 339-5785 or email at: chongba@sherpagcm.com
             </address>
+            
+            <!-- Signature Header Row: Thank you and Accepted & Approved by on the same line -->
+            <div class="signature-header-row" style="display: flex; width: 100%; justify-content: space-between; align-items: flex-start; margin-top: 18px;">
+                <div class="thank-you">Thank you,</div>
+                <div class="signature-header" style="position: relative; top: -8px;">
+                    Accepted & Approved by: <input type="text" class="inline-input borderless-input" style="border: none !important; border-bottom: none !important; outline: none;">
+                </div>
+            </div>
+            <!-- Two-column layout for signature area -->
+            <div style="display: flex; width: 100%; justify-content: space-between; margin-top: 0;">
+                <!-- Left column -->
+                <div style="width: 45%;">
+                    <div class="signer-name"><b>Chongba L. Sherpa</b></div>
+                    <div class="signer-title">President</div>
+                </div>
+                
+                <!-- Right column -->
+                <div style="width: 45%;">
+                    <div class="signature-form">
+                        <div class="form-row">
+                            <label for="client4">Name:</label>
+                            <input id="client4" type="text">
+                        </div>
+                        <div class="form-row">
+                            <label for="typed-signature">Signature:</label>
+                            <input type="text" id="typed-signature">
+                        </div>
+                        <div class="form-row title-date-row">
+                            <label for="title">Title:</label>
+                            <input id="title" type="text">
+                            <label for="date2" class="date-label">Date:</label>
+                            <input id="date2" type="date">
+                        </div>
+                        <div class="form-row project-row">
+                            <label for="projectName2">Client Job/Project #:</label>
+                            <input id="projectName2" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
 
         <!-- Footer and Signature Section -->
         <footer>
-            <div class="last">
-                <div class="last-left">
-                    <div>Thank you,</div>
-                </div>
-                <div class="last-right">
-                    <div id="client3"></div>
-                </div>
-            </div>
-            <div class="last">
-                <div class="left-side">
-                    <div><b>Chongba L. Sherpa</b></div>
-                    <div>President</div>
-                </div>
-                <div class="right-side signature-area">
-                    <div class="form-row">
-                        <label for="client4">Name:</label>
-                        <input id="client4" type="text">
-                    </div>
-                    <div class="form-row">
-                        <label for="typed-signature">Signature:</label>
-                        <input type="text" id="typed-signature">
-                    </div>
-                    <div class="form-row title-date-row">
-                        <label for="title">Title:</label>
-                        <input id="title" type="text">
-                        <label for="date2" class="date-label">Date:</label>
-                        <input id="date2" type="date">
-                    </div>
-                    <div class="form-row">
-                        <label for="projectName2">Project Name:</label>
-                        <input id="projectName2" type="text">
-                    </div>
-                </div>
-            </div>
+            <!-- Removed duplicate signature section -->
         </footer>
+        
+        <!-- Universal Footer (works in both print and normal view) -->
+        <div class="universal-footer">
+            <div class="footer-content" style="display: flex; align-items: center;">
+                <span class="page-number" style="font-weight: bold; color: #000; font-style: normal; font-family: 'Cascadia Code', 'Fira Mono', 'Lucida Handwriting', 'Brush Script MT', cursive, monospace, serif;">1|</span><span style="font-weight: normal; font-style: normal; font-family: 'Cascadia Code', 'Fira Mono', 'Lucida Handwriting', 'Brush Script MT', cursive, monospace, serif; margin-left: 1.2em;">Page</span>
+                <span class="address-footer" style="font-weight: normal; font-style: normal; color: #000; font-family: 'Cascadia Code', 'Fira Mono', 'Lucida Handwriting', 'Brush Script MT', cursive, monospace, serif; margin-left: 2em;">65-58 Maurice Avenue, Woodside NY 11377</span>
+            </div>
+        </div>
     </div>
-    <button id="downloadButton" style="margin: 2em auto; display: block;">Download PDF</button>
+    <button id="downloadButton" style="margin: 2em auto; display: block;">Print / Save as PDF</button>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="display.js"></script>
 </body>

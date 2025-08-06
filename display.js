@@ -52,9 +52,24 @@ if (services.length > 0) {
   table.appendChild(totalRow);
 }
 
+// Make sure the footer is visible
+document.addEventListener('DOMContentLoaded', function() {
+  const footer = document.querySelector('.universal-footer');
+  if (footer) {
+    footer.style.display = 'block';
+  }
+});
+
 const downloadBtn = document.getElementById('downloadButton');
 if (downloadBtn) {
   downloadBtn.onclick = function() {
+    // Ensure footer is visible before printing
+    const footer = document.querySelector('.universal-footer');
+    if (footer) {
+      footer.style.display = 'block';
+    }
+    
+    // Use window.print() which shows the print dialog
     window.print();
   };
 }
