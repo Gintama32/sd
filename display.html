@@ -11,35 +11,35 @@
     <div class="proposal-container">
 
         <!-- Header Section -->
-        <header>
-            <img src="logo.jpg" alt="logo" class="logo">
-            <div class="header-right">
-                
-                <h2>Fee Proposal</h2>
-                <p id="date" class="header-date"></p>
+         <img src="logo.jpg" alt="logo" class="logo">
+        <header style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+            <div class="left-side">
+              <div id="clientName">Furba Lama Sherpa</div>
+              <div id="position">Position</div>
+              <div id="clientFirmName">Firm</div>
+              <div id="address1">Address Line 1</div>
+              <div id="address2">Address Line 2</div>
             </div>
-            <div class="letter-header">
-                <div class="left-side">
-                    <div id="clientName"></div>
-                    <div id="position"></div>
-                    <div id="clientFirmName"></div>
-                    <div id="address1"></div>
-                    <div id="address2"></div>
-                </div>
+          
+            <div class="header-right" style="text-align: right; margin-top: 4px;">
+              <h2 style="margin-bottom: 3px; font-family: 'Times New Roman'; font-size: 16pt">Fee Proposal</h2>
+              <p id="date" class="header-date" style="margin: 2px 0 0 0;">Date</p>
             </div>
-        </header>
+          </header>
+          
+          
 
         <!-- Main Content -->
         <main>
-            <p id="projectName2"></p>
+            <p id="projectName"></p>
             <p id="client3"></p>
             <p>Sherpa Construction Consulting (Sherpa) is pleased to submit its lump sum fee proposal to provide cost estimating services for the subject project. Our proposed services and associated fees are below:</p>
             <div class="table-container">
                 <table>
                     <thead>
-                        <tr>
+                        <tr style="background-color: #d2def0;">
                             <th>Project/Phase Description</th>
-                            <th>Total Fees</th>
+                            <th>Total Fee</th>
                         </tr>
                     </thead>
                     <!-- Table body will be populated by your display.js -->
@@ -55,7 +55,7 @@
             </div>
             <div class="notes-section">
                 <p><u>Notes:</u></p>
-                <ul>
+                <ul style="text-align: left; line-height: 1.5em;">
                     <li>Value Engineering Services are not included.</li>
                     <li>Site Visits will be billed $250/ HR, if required.</li>
                     <li>Reconciliation with an added third party or GMP negotiation will be an additional service.</li>
@@ -80,15 +80,14 @@
                 </div>
             </div>
             <!-- Two-column layout for signature area -->
-            <div style="display: flex; width: 100%; justify-content: space-between; margin-top: 0;">
+            <div class="signature-flex-row" style="display: flex; width: 100%; justify-content: space-between; align-items: flex-start; margin-top: 0;">
                 <!-- Left column -->
-                <div style="width: 45%;">
+                <div class="signature-left">
                     <div class="signer-name"><b>Chongba L. Sherpa</b></div>
                     <div class="signer-title">President</div>
                 </div>
-                
                 <!-- Right column -->
-                <div style="width: 45%;">
+                <div class="signature-right">
                     <div class="signature-form">
                         <div class="form-row">
                             <label for="client4">Name:</label>
@@ -98,17 +97,18 @@
                             <label for="typed-signature">Signature:</label>
                             <input type="text" id="typed-signature">
                         </div>
-                        <div class="form-row title-date-row">
+                        <div class="form-row">
                             <label for="title">Title:</label>
-                            <input id="title" type="text">
+                            <input id="title" type="text" style="margin-right: 12px;">
                             <label for="date2" class="date-label">Date:</label>
-                            <input id="date2" type="date">
+                            <input id="date2" type="text">
                         </div>
-                        <div class="form-row project-row">
+                        <div class="form-row">
                             <label for="projectName2">Client Job/Project #:</label>
                             <input id="projectName2" type="text">
                         </div>
                     </div>
+
                 </div>
             </div>
         </main>
@@ -122,7 +122,7 @@
         <div class="universal-footer">
             <div class="footer-content" style="display: flex; align-items: center;">
                 <span class="page-number" style="font-weight: bold; color: #000; font-style: normal; font-family: 'Cascadia Code', 'Fira Mono', 'Lucida Handwriting', 'Brush Script MT', cursive, monospace, serif;">1|</span><span style="font-weight: normal; font-style: normal; font-family: 'Cascadia Code', 'Fira Mono', 'Lucida Handwriting', 'Brush Script MT', cursive, monospace, serif; margin-left: 1.2em;">Page</span>
-                <span class="address-footer" style="font-weight: normal; font-style: normal; color: #000; font-family: 'Cascadia Code', 'Fira Mono', 'Lucida Handwriting', 'Brush Script MT', cursive, monospace, serif; margin-left: 2em;">65-58 Maurice Avenue, Woodside NY 11377</span>
+                <span class="address-footer" style="font-weight: normal; font-style: normal; color: #000; font-family: 'Monotype Corsiva'; margin-left: 2em;">65-58 Maurice Avenue, Woodside NY 11377</span>
             </div>
         </div>
     </div>

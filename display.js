@@ -9,7 +9,8 @@ if (data.address2) document.getElementById("address2").textContent = `${data.add
 if (data.clientSalutation && data.clientName) {
   document.getElementById("client3").textContent = `Dear ${data.clientSalutation} ${data.clientLastName}`;
 } 
-if (data.projectName) document.getElementById("projectName2").textContent = `${data.projectName}`;
+if (data.projectName) document.getElementById("projectName").textContent = `Subject: ${data.projectName}`;  
+
 // Fill right-side date
 if (data.date) {
   // Format date to mm/dd/yyyy
@@ -34,23 +35,45 @@ if (mainParagraph) {
 }
 
 if (services.length > 0) {
-  services.forEach(item => {
+  services.forEach((item, index) => {
     const row = document.createElement("tr");
-    // Format fee with dollar sign
+
+    // Format fee
     let feeNum = parseFloat((item.fee || "0").replace(/[^\d.\-]/g, ""));
-    let feeDisplay = isNaN(feeNum) ? item.fee : `$${feeNum.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+    let feeDisplay = isNaN(feeNum)
+      ? item.fee
+      : `$${feeNum.toLocaleString(undefined, {
+          minimumFractionDigits: 2,
+          maximumFractionDigits: 2,
+        })}`;
+
+    // Add special classes to first and last service row
+    if (index === 0) row.classList.add("first-service-row");
+    if (index === services.length - 1) row.classList.add("last-service-row");
+
     // Add a class if the service is a repair section
-    if (item.service && item.service.toLowerCase().includes('repair')) {
-      row.classList.add('repair-row');
+    if (item.service && item.service.toLowerCase().includes("repair")) {
+      row.classList.add("repair-row");
     }
+
     row.innerHTML = `<td style="text-align: center;">${item.service}</td><td style="text-align: right;">${feeDisplay}</td>`;
     table.appendChild(row);
+
     if (!isNaN(feeNum)) totalFee += feeNum;
   });
+
   // Add total row
   const totalRow = document.createElement("tr");
   totalRow.className = "total-row";
-  totalRow.innerHTML = `<td style="text-align: right;">Total</td><td style="text-align: right;">$${totalFee.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>`;
+  totalRow.innerHTML = `
+  <td style="text-align: right; padding-top: 5px; padding-bottom: 8px;">Total</td>
+  <td style="text-align: right; padding-top: 5px; padding-bottom: 8px;">
+    $${totalFee.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    })}
+  </td>
+`;
   table.appendChild(totalRow);
 }
 

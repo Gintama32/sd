@@ -2,8 +2,24 @@
 body {
   background-color: #f0f0f0;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 10pt;
+  text-align: justify;
+  margin:10px;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align left and right containers at their top edges */
+  gap: 1rem;
+}
+
+.left-side {
+  margin-top: 42px; /* pushes left side down */
+}
+.header-right {
+  text-align: right;
+}
+
 
 .proposal-container {
   max-width: 8.5in;
@@ -30,51 +46,13 @@ main {
 img {
   margin: 0 auto;
   display: block;
-  max-width: 150px;
+  width: 255px;
+  height: 70px;
+  object-fit: contain;
 }
 
-.header-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  margin-bottom: 0.5em;
-}
 
-h2 {
-  margin: 0;
-  
-  text-align: right;
-  font-size: 1.5em;
-}
 
-.header-date {
-  margin: 0.2em 0 0 0;
-  font-size: 1em;
-  text-align: right;
-}
-
-.letter-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 0.5em;
-}
-
-.left-side {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  line-height: 1.2;
-  padding: 0;
-  margin: 0;
-}
-
-.right-side {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  gap: 10px;
-}
 
 /* Table styling */
 .table-container {
@@ -85,44 +63,37 @@ h2 {
 }
 
 table {
-  width: 75%;
+  width: 55%;
   border: 2px solid black;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: 1em;
 }
 
-table th,
-table td {
-  padding: 10px;
-  text-align: left;
-  border: none;
+table thead tr{
+  margin:10px;
 }
 
 /* Make only the first two th elements (Project/Phase Description and Total Fee) normal weight and left-aligned */
-table thead th {
-  font-weight: normal;
-  text-align: left;
-}
+
 
 /* Center the text in all table header cells */
-table thead th {
-  text-align: center;
-}
 
 /* Restore a visible bottom border for all table header cells */
 table thead th {
   border-bottom: 2px solid black;
+  text-align: center;
 }
 
 table th:first-child,
 table td:first-child {
   border-right: 2px solid black;
-  width: 55%;
+  width: 35%;
 }
 
 table th:last-child,
 table td:last-child {
-  width: 15%;
+  width: 12%;
 }
 
 /* Adds a border above the total row */
@@ -131,12 +102,14 @@ table td:last-child {
 }
 
 /* Center all table data cells except the total row */
-table tbody td {
-  text-align: center;
-}
+
 /* Right-align the last cell in the total row */
 
-
+table td{
+  margin: 0px;
+  padding: 0px;
+  line-height: 0em;
+}
 /* Center the data in all cells of repair section rows */
 tr.repair-row td {
   text-align: center;
@@ -150,15 +123,7 @@ tr.repair-row td {
   font-size: 1.05em;
 }
 
-.notes-section ul {
-  list-style-position: inside;
-  padding-left: 0;
-  margin-left: 0;
-  margin-top: 0;
-  margin-bottom: 0.4em;
-  line-height: 1.1;
-  font-size: 1em;
-}
+
 
 address {
   font-style: normal;
@@ -167,6 +132,25 @@ address {
   padding-bottom: 0;
   font-size: 1em;
 }
+.notes-section ul {
+  padding-left: 1.2em;      /* space for bullets */
+  margin-left: 0;
+  list-style-position: outside;
+}
+
+.notes-section ul li {
+  position: relative;        /* allow absolute positioning */
+  padding-left: 0.5em;       /* indent text after bullet */
+  text-indent: 0;  
+  line-height: 1.2;       /* tighter line height for wrapped lines */
+  margin-bottom: 0.3em;           /* reset any indent */
+}
+
+.notes-section ul li::marker {
+  font-weight: normal;       /* optional, style bullet */
+  /* no extra styles needed here */
+}
+
 
 
 /* Footer and Signature Section Styling */
@@ -216,7 +200,6 @@ address {
 
 .inline-input {
   width: 150px;
-  margin-left: 5px;
   border: none !important;
   border-bottom: none !important;
   border-top: none !important;
@@ -232,7 +215,42 @@ address {
 .signature-form {
   display: flex;
   flex-direction: column;
-  gap: 0.4em;
+  align-items: flex-start;
+}
+.signature-form .form-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+.signature-form .form-row label {
+  flex: 0 1 auto;
+  margin-right: 2px;
+  white-space: nowrap;
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+  text-align: left;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+.signature-form .form-row input[type="text"],
+.signature-form .form-row input[type="date"] {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.signature-form .form-row input#title {
+  width: 110px;
+  max-width: 110px;
+}
+.signature-form .form-row input#date2 {
+  width: 113px;
+  max-width: 113px;
+}
+.signature-form .form-row input#projectName2 {
+  width: 110px;
+  max-width: 110px;
 }
 
 .borderless-input {
@@ -259,39 +277,49 @@ address {
   margin-left: auto;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 150px 200px;
-  gap: 5px;
-  width: 100%;
-  max-width: 400px;
-  margin-bottom: 0;
+.form-row, .title-date-row, .project-row {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 0;
+  margin-bottom: 0.3em;
+}
+.form-row label, .title-date-row label, .project-row label {
+  margin-right: 0;
+  min-width: 0;
+  padding: 0;
+}
+.form-row input, .title-date-row input, .project-row input {
+  flex: 1 1 auto;
+  min-width: 60px;
+  margin: 0;
+  padding: 0;
 }
 
 /* No special margin for first form row */
 
-.form-row label {
-  text-align: left;
-  font-size: 0.95em;
-  white-space: nowrap;
-}
-
 /* Removed special styling for the approved label as it's now in the thank-you-row */
 
 /* Set specific width for inputs to align them */
-#client4, #typed-signature {
-  width: 200px; 
+#client4 {
+  width: 255px;
+  min-width: 255px;
+  max-width: 255px;
 }
 
 #projectName2 {
-  width: 150px;
+  width: 178px;
+  min-width: 178px;
+  max-width: 178px;
 }
 
 /* Special styling for the project row */
 .project-row {
-  display: grid;
-  grid-template-columns: 150px 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 0.3em;
 }
 
 .project-row input {
@@ -300,10 +328,11 @@ address {
 
 /* Special handling for the more complex Title/Date row */
 .title-date-row {
-  display: grid;
-  grid-template-columns: 150px 60px 40px 100px;
-  gap: 5px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 4px;
+  margin-bottom: 0.3em;
 }
 
 .title-date-row .date-label {
@@ -336,6 +365,9 @@ address {
 }
 
 #typed-signature {
+  width: 235px;
+  min-width: 235px;
+  max-width: 235px;
   font-family: cursive;
   font-size: 1em;
 }
@@ -380,6 +412,41 @@ address {
 .signature-header-row {
   margin-bottom: 0.2em;
 }
+
+.signature-flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 0.2em;
+}
+.signature-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 45%;
+}
+.signature-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 60%;
+}
+.first-service-row td {
+  padding-top: 12px;
+}
+
+.last-service-row td {
+  padding-bottom: 12px;
+}
+
+
+.total-row td {
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+}
+
 
 @media print {
   @page {
@@ -431,7 +498,7 @@ address {
   
   .form-row {
     margin-bottom: 0;
-    gap: 2px;
+    gap: 0px;
   }
   
   .signature-form {
@@ -498,4 +565,24 @@ address {
 }
 #projectName2 {
   width: 100%;
+}
+
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table td {
+  height: 10px;
+  padding: 0 1px;
+  font-size: 0.95em;
+  line-height: 1.05;
+  vertical-align: middle;
+}
+
+table th {
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-weight: normal;
 }
