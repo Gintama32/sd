@@ -1,16 +1,14 @@
 const data = JSON.parse(localStorage.getItem("proposalData") || "{}");
 
 // Fill left-side fields
-if (data.clientName) document.getElementById("clientName").textContent = `${data.clientName}`;
+if (data.clientName && data.clientLastName) document.getElementById("clientName").textContent = `${data.clientName} ${data.clientLastName}`;
 if (data.position) document.getElementById("position").textContent = `${data.position}`;
 if (data.clientFirmName) document.getElementById("clientFirmName").textContent = `${data.clientFirmName}`;
 if (data.address1) document.getElementById("address1").textContent = `${data.address1}`;
 if (data.address2) document.getElementById("address2").textContent = `${data.address2}`;
 if (data.clientSalutation && data.clientName) {
-  document.getElementById("client3").textContent = `Dear ${data.clientSalutation} ${data.clientName}`;
-} else if (data.clientName) {
-  document.getElementById("client3").textContent = `Dear ${data.clientName}`;
-}
+  document.getElementById("client3").textContent = `Dear ${data.clientSalutation} ${data.clientLastName}`;
+} 
 if (data.projectName) document.getElementById("projectName2").textContent = `${data.projectName}`;
 // Fill right-side date
 if (data.date) {
@@ -45,7 +43,7 @@ if (services.length > 0) {
     if (item.service && item.service.toLowerCase().includes('repair')) {
       row.classList.add('repair-row');
     }
-    row.innerHTML = `<td>${item.service}</td><td style="text-align: right;">${feeDisplay}</td>`;
+    row.innerHTML = `<td style="text-align: center;">${item.service}</td><td style="text-align: right;">${feeDisplay}</td>`;
     table.appendChild(row);
     if (!isNaN(feeNum)) totalFee += feeNum;
   });
