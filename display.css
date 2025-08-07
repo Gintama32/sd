@@ -1,7 +1,7 @@
 /* Styles for the overall page layout */
 body {
   background-color: #f0f0f0;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
 
@@ -314,7 +314,6 @@ address {
   width: 100px;
   max-width: 100px;
 }
-
 .title-date-row #title {
   width: 60px;
 }
@@ -403,7 +402,8 @@ address {
     margin: 0;
     padding: 0;
     box-shadow: none;
-    page-break-after: always;
+    /* Remove page-break-after to prevent extra blank page */
+    /* page-break-after: always; */
     position: relative;
     display: flex;
     flex-direction: column;
@@ -465,16 +465,16 @@ address {
   }
   
   .universal-footer {
-    position: fixed;
-    bottom: 0.05in;
-    left: 0;
-    right: 0;
+    position: static;
+    bottom: auto;
+    left: auto;
+    right: auto;
     width: 100%;
     padding-top: 0.05in;
     padding-bottom: 0.05in;
     border-top: 1px solid #ccc;
     background-color: white;
-    z-index: 9999;
+    z-index: auto;
   }
   
   footer {
@@ -495,4 +495,7 @@ address {
   .signature-header-row {
     margin-bottom: 0.1in;
   }
+}
+#projectName2 {
+  width: 100%;
 }

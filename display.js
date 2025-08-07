@@ -45,14 +45,14 @@ if (services.length > 0) {
     if (item.service && item.service.toLowerCase().includes('repair')) {
       row.classList.add('repair-row');
     }
-    row.innerHTML = `<td>${item.service}</td><td>${feeDisplay}</td>`;
+    row.innerHTML = `<td>${item.service}</td><td style="text-align: right;">${feeDisplay}</td>`;
     table.appendChild(row);
     if (!isNaN(feeNum)) totalFee += feeNum;
   });
   // Add total row
   const totalRow = document.createElement("tr");
   totalRow.className = "total-row";
-  totalRow.innerHTML = `<td style="text-align: right;">Total</td><td style="text-align: center;">$${totalFee.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>`;
+  totalRow.innerHTML = `<td style="text-align: right;">Total</td><td style="text-align: right;">$${totalFee.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</td>`;
   table.appendChild(totalRow);
 }
 
